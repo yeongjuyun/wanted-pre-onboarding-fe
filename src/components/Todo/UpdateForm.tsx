@@ -1,8 +1,7 @@
 import { useParams, useOutletContext, useNavigate } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { updateTodo } from 'apis/todoApi';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import * as SC from './TodoStyle';
 import type { UpdateProps } from 'types/todo';
 
@@ -12,14 +11,13 @@ export const UpdateForm = (props: any) => {
   const { getTodoList, todos }: UpdateProps = useOutletContext();
   const todo = todos.find((todo) => todo.id === Number(id));
 
-  // 이미 삭제한 목록일 경우, todo로 이동
   if (!todo) {
-    console.log('이미 삭제한 목록입니다.');
     navigate('/todo');
+    throw new Error('해당 목록을 불러오지 못했습니다.');
   }
 
   const [inputs, setInputs] = useState({
-    todo: todo?.todo,
+    todo: todo.todo,
     isCompleted: false,
   });
 
@@ -29,20 +27,21 @@ export const UpdateForm = (props: any) => {
       ...prev,
       [name]: value,
     }));
+    console.log(name, value);
   };
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      if (inputs.todo && todo?.isCompleted) {
+      if (inputs.todo) {
         const data = await updateTodo(
           Number(id),
           inputs.todo,
           todo.isCompleted
         );
+        console.log('수정되었습니다.', data);
       }
       getTodoList();
-      console.log('수정되었습니다.');
       navigate('/todo');
     } catch (error) {
       if (error instanceof Error) {
