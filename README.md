@@ -1,6 +1,6 @@
 # 프리온보딩 챌린지 Todo App
 
-<img width="900" alt="video" src="https://user-images.githubusercontent.com/79828924/185168996-6df7d4e5-1aff-44b5-872b-a2cc62631017.mov">
+<img width="900" alt="video" src="https://user-images.githubusercontent.com/79828924/185189817-5bbba31e-ac6a-4f5c-b7cf-99540db5557c.gif">
 
 <br>
 
