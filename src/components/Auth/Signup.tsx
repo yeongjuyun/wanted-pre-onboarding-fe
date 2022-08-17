@@ -55,35 +55,41 @@ export default function SignupForm() {
   };
 
   return (
-    <div>
-      <h1>회원가입</h1>
+    <SC.Container>
+      <SC.Title>회원가입</SC.Title>
       <SC.Form onSubmit={(e) => onSubmitButton(e)}>
-        <input
+        <SC.Label htmlFor='email'>이메일</SC.Label>
+        <SC.Input
+          id='email'
           type='text'
           name='email'
           placeholder='email'
           onChange={onChangeInputs}
         />
-        <input
+        <SC.Label htmlFor='password'>비밀번호</SC.Label>
+        <SC.Input
+          id='password'
           type='password'
           name='password'
           placeholder='password'
           onChange={onChangeInputs}
         />
-        <input
+        <SC.Label htmlFor='confirmPassword'>비밀번호 확인</SC.Label>
+        <SC.Input
+          id='confirmPassword'
           type='password'
           name='confirmPassword'
           placeholder='confirmPassword'
           onChange={onChangeInputs}
         />
-        <button type='submit' disabled={buttonDisabled}>
+        <SC.Button type='submit' disabled={buttonDisabled}>
           가입하기
-        </button>
+        </SC.Button>
       </SC.Form>
-      <span>
+      <SC.Text>
         아이디가 있으신가요?
         <Link to='/login'>로그인하기</Link>
-      </span>
-    </div>
+      </SC.Text>
+    </SC.Container>
   );
 }

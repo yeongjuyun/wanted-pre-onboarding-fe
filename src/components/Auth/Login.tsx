@@ -50,29 +50,33 @@ export default function LoginForm() {
   }, []);
 
   return (
-    <div>
-      <h1>로그인</h1>
+    <SC.Container>
+      <SC.Title>로그인</SC.Title>
       <SC.Form onSubmit={(e) => onSubmitButton(e)}>
-        <input
+        <SC.Label htmlFor='email'>이메일</SC.Label>
+        <SC.Input
+          id='email'
           type='text'
           name='email'
           placeholder='email'
           onChange={onChangeInputs}
         />
-        <input
+        <SC.Label htmlFor='password'>비밀번호</SC.Label>
+        <SC.Input
+          id='password'
           type='password'
           name='password'
           placeholder='password'
           onChange={onChangeInputs}
         />
-        <button type='submit' disabled={buttonDisabled}>
+        <SC.Button type='submit' disabled={buttonDisabled}>
           로그인
-        </button>
+        </SC.Button>
       </SC.Form>
-      <span>
+      <SC.Text>
         아직 회원이 아니신가요?
         <Link to='/signup'>가입하기</Link>
-      </span>
-    </div>
+      </SC.Text>
+    </SC.Container>
   );
 }
