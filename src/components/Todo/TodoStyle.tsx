@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 500px;
-  border: 1px solid black;
-  margin: 20px;
   display: flex;
   flex-direction: column;
-  background-color: #efebe580;
+  border: 1px solid black;
+  margin: 20px;
+  background-color: white;
 `;
 
 export const TodoContainer = styled.div`
@@ -39,11 +39,12 @@ export const Form = styled.form`
 `;
 
 export const Header = styled.div`
-  border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid black;
   padding: 10px;
-  background-color: #eddfb3;
+  color: white;
+  background-color: black;
 `;
 
 export const Title = styled.h2`
@@ -55,15 +56,15 @@ export const Button = styled.button`
   border: 0;
   border-radius: 10px;
   outline: 0;
-  background-color: #ca955c;
+  background-color: black;
+  color: white;
   padding: 0 10px;
   margin-left: 5px;
-  color: #fff;
   font-weight: 500;
 
   cursor: pointer;
   :hover {
-    background-color: #ca955cbd;
+    background-color: #000000bd;
   }
 `;
 
